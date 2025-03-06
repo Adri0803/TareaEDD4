@@ -1,14 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package tarea4endes24;
+package entidadFinanciera;
 
 
 public class CCuenta {
 
-    /**
+    private static final String ERRORCANTIDADNEGATIVA = "No se puede ingresar una cantidad negativa";
+	/**
      * Nombre de la persona titular
      */
     private String nombre;
@@ -34,7 +30,7 @@ public class CCuenta {
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
-            throw new Exception("No se puede ingresar una cantidad negativa");
+            throw new Exception(ERRORCANTIDADNEGATIVA);
         saldo = saldo + cantidad;
     }
 
@@ -46,6 +42,40 @@ public class CCuenta {
             throw new Exception ("No se hay suficiente saldo");
         saldo = saldo - cantidad;
     }
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(String cuenta) {
+		this.cuenta = cuenta;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+	public double getTipoInterés() {
+		return tipoInterés;
+	}
+
+	public void setTipoInterés(double tipoInterés) {
+		this.tipoInterés = tipoInterés;
+	}
+    
+    
 }
 
 
